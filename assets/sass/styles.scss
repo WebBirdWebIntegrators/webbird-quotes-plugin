@@ -1,0 +1,29 @@
+@import "layout";
+
+// Breakpoints
+$bp1: 25em;        // Smartphone (portrait)
+$bp2: 30em;        // Smartphone (landscape)
+$bp3: 37.5em;      // Smartphone HD (+600 pixels)
+$bp4: 48em;        // Tablet (portrait)
+$bp5: 62em;        // Tablet (landscape) + Small Desktop
+$bp6: 93.75em;     // Large Desktop
+
+// Media Queries
+@media only screen and (min-width: $bp1) {
+  @import "bp1";
+}
+@media only screen and (min-width: $bp2) {
+  @import "bp2";
+}
+@media only screen and (min-width: $bp3) {
+  @import "bp3";
+}
+@media only screen and (min-width: $bp4) {
+  @import "bp4";
+}
+@media only screen and (min-width: $bp5) {
+  @import "bp5";
+}
+@media only screen and (min-width: $bp6) {
+  @import "bp6";
+}

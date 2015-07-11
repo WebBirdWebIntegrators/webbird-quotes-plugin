@@ -1,0 +1,46 @@
+.webbird-quotes {
+  .webbird-quotes__container {
+    display: table;
+
+    width: 100%;
+
+    text-align: left;
+
+    .webbird-quotes__image {
+      display: table-cell;
+
+      vertical-align: middle;
+
+      img {
+        display: block;
+
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .webbird-quotes__content {
+      display: table-cell;
+
+      margin: 0;
+
+      vertical-align: middle;
+    }
+
+    .webbird-quotes__link {
+      display: table-cell;
+
+      padding-left: 5%;
+
+      vertical-align: middle;
+
+      a {
+
+        &.button {
+          text-align: center;
+          min-width: 200px;
+        }
+      }
+    }
+  }
+}

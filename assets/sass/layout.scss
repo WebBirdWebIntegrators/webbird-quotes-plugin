@@ -1,0 +1,84 @@
+.webbird-quotes {
+  position: relative;
+
+  display: block;
+
+  margin: 0;
+  margin: 0;
+  padding: 0;
+
+  .webbird-quotes__container {
+    position: relative;
+
+    display: block;
+
+    margin: 0;
+    padding: 2em;
+
+    text-align: center;
+
+    background-color: rgba(0, 0, 0, .05);
+
+    .webbird-quotes__image {
+      position: relative;
+
+      display: block;
+
+      margin: 0;
+      padding: 0;
+
+      img {
+        display: block;
+
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .webbird-quotes__content {
+      position: relative;
+
+      display: block;
+
+      margin: 0;
+      margin-bottom: 1.5em;
+      padding: 0;
+
+      p {
+        margin-bottom: .5em;
+      }
+
+      .webbird-quotes__content__author {
+        font-weight: bold;
+
+        position: relative;
+
+        display: block;
+
+        margin: 0;
+        padding: 0;
+
+        &::before {
+          font-weight: normal;
+
+          content: "-";
+        }
+      }
+    }
+
+    .webbird-quotes__link {
+      position: relative;
+
+      display: block;
+
+      margin: 0;
+      padding: 0;
+
+      a {
+        &.button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
