@@ -22,18 +22,6 @@ add_action( 'after_setup_theme', 'webbird_quotes_load_textdomain' );
 
 require_once( plugin_dir_path( __FILE__ ) . '/assets/acf/quotes.php' );
 
-if( function_exists('acf_add_options_page') ) {
-
-	acf_add_options_page(array(
-    'page_title' 	=> __('Quotes', 'webbird-quotes'),
-		'menu_title'	=> __('Quotes', 'webbird-quotes'),
-		'menu_slug' 	=> 'webbird-quotes',
-		'capability'	=> 'edit_posts',
-		'icon_url'		=> 'dashicons-admin-plugins',
-		'redirect'		=> true
-	));
-}
-
 function webbird_quotes_start() {
 	$webbird_quotes = new Webbird_Quotes_Shortcode();
 	$webbird_quotes->initialize();
@@ -61,3 +49,7 @@ function webbird_quotes_shortcode( $atts ){
 	require_once( plugin_dir_path( __FILE__ ) . '/views/webbird-quotes-shortcode.php' );
 }
 add_shortcode( 'webbird-quotes', 'webbird_quotes_shortcode' );
+
+// WP Updates Code
+require_once('wp-updates-plugin.php');
+new WPUpdatesPluginUpdater_1197( 'http://wp-updates.com/api/2/plugin', plugin_basename(__FILE__));

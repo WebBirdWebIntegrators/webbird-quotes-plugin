@@ -4,69 +4,85 @@
   margin: 0;
   margin: 0;
   padding: 0; }
-  .webbird-quotes .webbird-quotes__container {
+  .webbird-quotes .webbird-quotes__wrapper {
     position: relative;
     display: block;
     margin: 0;
     padding: 2em;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.05); }
-    .webbird-quotes .webbird-quotes__container .webbird-quotes__image {
+    .webbird-quotes .webbird-quotes__wrapper .webbird-quotes__image {
       position: relative;
       display: block;
       margin: 0;
-      padding: 0; }
-      .webbird-quotes .webbird-quotes__container .webbird-quotes__image img {
+      padding: 0;
+      text-align: center; }
+      .webbird-quotes .webbird-quotes__wrapper .webbird-quotes__image img {
         display: block;
-        margin: 0;
-        padding: 0; }
-    .webbird-quotes .webbird-quotes__container .webbird-quotes__content {
+        width: 50%;
+        margin: 0 auto;
+        padding: 0;
+        border-radius: 50%; }
+    .webbird-quotes .webbird-quotes__wrapper .webbird-quotes__content {
       position: relative;
       display: block;
       margin: 0;
       margin-bottom: 1.5em;
       padding: 0; }
-      .webbird-quotes .webbird-quotes__container .webbird-quotes__content p {
+      .webbird-quotes .webbird-quotes__wrapper .webbird-quotes__content h3 {
+        margin-top: 0;
+        padding-top: 0; }
+      .webbird-quotes .webbird-quotes__wrapper .webbird-quotes__content p {
         margin-bottom: .5em; }
-      .webbird-quotes .webbird-quotes__container .webbird-quotes__content .webbird-quotes__content__author {
+      .webbird-quotes .webbird-quotes__wrapper .webbird-quotes__content .webbird-quotes__content__author {
         font-weight: bold;
         position: relative;
         display: block;
         margin: 0;
         padding: 0; }
-        .webbird-quotes .webbird-quotes__container .webbird-quotes__content .webbird-quotes__content__author::before {
+        .webbird-quotes .webbird-quotes__wrapper .webbird-quotes__content .webbird-quotes__content__author::before {
           font-weight: normal;
           content: "-"; }
-    .webbird-quotes .webbird-quotes__container .webbird-quotes__link {
+    .webbird-quotes .webbird-quotes__wrapper .webbird-quotes__link {
       position: relative;
       display: block;
       margin: 0;
       padding: 0; }
-      .webbird-quotes .webbird-quotes__container .webbird-quotes__link a.button {
+      .webbird-quotes .webbird-quotes__wrapper .webbird-quotes__link a.button {
         width: 100%; }
+        .webbird-quotes .webbird-quotes__wrapper .webbird-quotes__link a.button span {
+          font-size: .75em;
+          display: inline-block;
+          min-width: 100%;
+          text-align: center;
+          opacity: .5; }
 
 @media only screen and (min-width: 62em) {
-  .webbird-quotes .webbird-quotes__container {
-    display: table;
-    width: 100%;
-    text-align: left; }
-    .webbird-quotes .webbird-quotes__container .webbird-quotes__image {
-      display: table-cell;
-      vertical-align: middle; }
-      .webbird-quotes .webbird-quotes__container .webbird-quotes__image img {
-        display: block;
-        margin: 0;
-        padding: 0; }
-    .webbird-quotes .webbird-quotes__container .webbird-quotes__content {
-      display: table-cell;
-      margin: 0;
-      vertical-align: middle; }
-    .webbird-quotes .webbird-quotes__container .webbird-quotes__link {
-      display: table-cell;
-      padding-left: 5%;
-      vertical-align: middle; }
-      .webbird-quotes .webbird-quotes__container .webbird-quotes__link a.button {
-        text-align: center;
-        min-width: 200px; } }
+  .webbird-quotes {
+    position: relative; }
+    .webbird-quotes .webbird-quotes__wrapper {
+      display: table;
+      box-sizing: border-box;
+      text-align: left; }
+      .webbird-quotes .webbird-quotes__wrapper .webbird-quotes__image {
+        display: table-cell;
+        padding-right: 5%;
+        vertical-align: middle; }
+        .webbird-quotes .webbird-quotes__wrapper .webbird-quotes__image img {
+          display: block;
+          width: 130px;
+          height: auto;
+          margin: 0;
+          padding: 0; }
+      .webbird-quotes .webbird-quotes__wrapper .webbird-quotes__content {
+        display: table-cell;
+        vertical-align: middle; }
+      .webbird-quotes .webbird-quotes__wrapper .webbird-quotes__link {
+        display: table-cell;
+        padding-left: 5%;
+        vertical-align: middle; }
+        .webbird-quotes .webbird-quotes__wrapper .webbird-quotes__link a.button {
+          min-width: 200px;
+          text-align: center; } }
 
 /*# sourceMappingURL=styles.css.map */

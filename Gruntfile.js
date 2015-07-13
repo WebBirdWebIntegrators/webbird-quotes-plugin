@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         your_target: {
             // Target-specific file lists and/or options go here.
             files: {
-                'assets/sass/styles.scss': ['assets/sass/styles.scss']
+                'assets/sass/*': ['assets/sass/*']
             }
         }
     },
@@ -32,6 +32,17 @@ module.exports = function(grunt) {
     watch: {
       files: ['assets/sass/*'],
       tasks: ['sass'],
+    },
+
+    compress: {
+      main: {
+        options: {
+          archive: 'webbird-quotes.zip'
+        },
+        files: [
+          {src: ['**', '!assets/sass/**', '!node_modules/**', '!Gruntfile.js', '!package.json', '!webbird-quotes.zip'], dest: 'webbird-quotes/'}, // includes files in path and its subdirs
+        ]
+      }
     }
 
   });
@@ -40,6 +51,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-csscomb');
   grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-contrib-compress');
 
   grunt.registerTask('batch', ['concurrent:batch1']);
 

@@ -12,7 +12,7 @@ acf_add_local_field_group(array (
       'name' => 'webbird_quotes__repeater',
       'type' => 'repeater',
       'instructions' => __('Enter your quotes', 'webbird-quotes'),
-      'required' => 1,
+      'required' => 0,
       'conditional_logic' => 0,
       'wrapper' => array (
         'width' => '',
@@ -24,6 +24,27 @@ acf_add_local_field_group(array (
       'layout' => 'block',
       'button_label' => 'Add Quote',
       'sub_fields' => array (
+				array (
+					'key' => 'field_webbird_quotes__title',
+					'label' => __('Title', 'webbird-quotes'),
+					'name' => 'webbird_quotes__title',
+					'type' => 'text',
+					'instructions' => __('Enter your title', 'webbird-quotes'),
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
         array (
           'key' => 'field_webbird_quotes__content',
           'label' => __('Quote', 'webbird-quotes'),
@@ -45,7 +66,7 @@ acf_add_local_field_group(array (
         array (
           'key' => 'field_webbird_quotes__author',
           'label' => __('Author', 'webbird-quotes'),
-          'name' => '_webbird_quotes__author',
+          'name' => 'webbird_quotes__author',
           'type' => 'text',
           'instructions' => __('Enter your author', 'webbird-quotes'),
           'required' => 0,
@@ -84,7 +105,7 @@ acf_add_local_field_group(array (
           'min_size' => '',
           'max_width' => '',
           'max_height' => '',
-          'max_size' => '5mb',
+          'max_size' => '',
           'mime_types' => 'jpg, png',
         ),
         array (
@@ -110,6 +131,42 @@ acf_add_local_field_group(array (
           'default_value' => 'disabled',
           'layout' => 'horizontal',
         ),
+				array (
+					'key' => 'field_webbird_quotes__link_label',
+					'label' => __('Link Label', 'webbird-quotes'),
+					'name' => 'webbird_quotes__link_label',
+					'type' => 'text',
+					'instructions' => __('Enter your link label', 'webbird-quotes'),
+					'required' => 0,
+					'conditional_logic' => array (
+            array (
+              array (
+                'field' => 'field_webbird_quotes__link_type',
+                'operator' => '==',
+                'value' => 'internal',
+              ),
+            ),
+						array (
+              array (
+                'field' => 'field_webbird_quotes__link_type',
+                'operator' => '==',
+                'value' => 'external',
+              ),
+            ),
+          ),
+					'wrapper' => array (
+						'width' => '50%',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
         array (
           'key' => 'field_webbird_quotes__link_type__internal',
           'label' => __('Internal page / post', 'webbird-quotes'),
@@ -127,7 +184,7 @@ acf_add_local_field_group(array (
             ),
           ),
           'wrapper' => array (
-            'width' => '',
+            'width' => '50%',
             'class' => '',
             'id' => '',
           ),
@@ -141,9 +198,9 @@ acf_add_local_field_group(array (
           'multiple' => 0,
         ),
         array (
-          'key' => 'field_webbird_quotes__link_type__internal',
+          'key' => 'field_webbird_quotes__link_type__external',
           'label' => __('Link to an external URL', 'webbird-quotes'),
-          'name' => 'webbird_quotes__link_type__internal',
+          'name' => 'webbird_quotes__link_type__external',
           'type' => 'url',
           'instructions' => __('Enter your external URL', 'webbird-quotes'),
           'required' => 0,
@@ -157,13 +214,49 @@ acf_add_local_field_group(array (
             ),
           ),
           'wrapper' => array (
-            'width' => '',
+            'width' => '50%',
             'class' => '',
             'id' => '',
           ),
           'default_value' => '',
           'placeholder' => 'http://',
         ),
+				array (
+					'key' => 'field_webbird_quotes__link_google_click_event',
+					'label' => __('Google Click Event', 'webbird-quotes'),
+					'name' => 'webbird_quotes__link_google_click_event',
+					'type' => 'text',
+					'instructions' => __('Enter your Google click event', 'webbird-quotes'),
+					'required' => 0,
+					'conditional_logic' => array (
+            array (
+              array (
+                'field' => 'field_webbird_quotes__link_type',
+                'operator' => '==',
+                'value' => 'internal',
+              ),
+            ),
+						array (
+              array (
+                'field' => 'field_webbird_quotes__link_type',
+                'operator' => '==',
+                'value' => 'external',
+              ),
+            ),
+          ),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				),
       ),
     ),
 	),
@@ -182,13 +275,6 @@ acf_add_local_field_group(array (
         'value' => 'page',
       ),
     ),
-		array (
-			array (
-				'param' => 'options_page',
-				'operator' => '==',
-				'value' => 'webbird-quotes',
-			),
-		),
 	),
 	'menu_order' => 0,
 	'position' => 'normal',
